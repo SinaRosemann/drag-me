@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Drag me</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="dragme.css">
-    </head>
-    <body class="background">
-        <div class="content">
-            <div>
-                <p>Choose your image</p>
-                <button class="button" role="button"><h2>1</h2></button>
-                <button class="button" role="button"><h2>2</h2></button>
-                <button class="button" role="button"><h2>3</h2></button>
-            </div>
 
-            <div id="cube">
-                <img id="cube__image" src="media/DragmeOne.jpg" draggable="true" ondragend="animation()">
-            </div>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Drag me</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="dragme.css">
+</head>
 
-            <div id="square">
-            </div>
+<body class="background">
+    <div class="content">
+        <div class="imagechoice">
+            <p>Choose your image</p>
+            <button class="button" role="button">
+                <h2>1</h2>
+            </button>
+            <button class="button" role="button">
+                <h2>2</h2>
+            </button>
+            <button class="button" role="button">
+                <h2>3</h2>
+            </button>
         </div>
 
-        
-        <script src="dragme.js" async defer></script>
-    </body>
+        <div class="container">
+            <div id="container__cube">
+                <img id="container__cube__image" src="media/DragmeOne.jpg" draggable="true" ondragend="animation()">
+            </div>
+            <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                <path id="path" class="path" d="M 0 100 L 400 100 " />
+            </svg>
+            <div id="container__square">
+            </div>
+        </div>
+    </div>
+
+    <script src="dragme.js" async defer></script>
+</body>
+
 </html>

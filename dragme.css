@@ -1,41 +1,44 @@
 
 body {
-    margin: 0px;
-    overflow: hidden;
-  }
+  margin: 0px;
+  overflow: hidden;
+}
 html{
-    color: #fff;
-  }
+  color: #fff;
+}
 .background {
-    width: 100vw;
-    height: 100vh;
-    background-color: #282828;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Open Sans', sans-serif;
-  }
-.content {
-    display: inline-flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: #282828;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+.container {
+  display: inline-flex;
 }
 
-  /* Image Cube */
-  #cube {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-  }
-  #cube__image {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-  }
+/* Image Cube */
+#container__cube {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+#container__cube__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 
-
-  /*  Drop Suqare */
-
-  #square {
-    height: 400px;
-    width: 400px;
-    border: 1px solid #ffffff;
-  }
+/* Path */
+#path {
+  stroke: #ffffff;
+  stroke-width: 5px;
+}
+/*  Drop Suqare */
+#container__square {
+  height: 200px;
+  width: 200px;
+  border: 1px solid #ffffff;
+}

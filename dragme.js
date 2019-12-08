@@ -22,18 +22,17 @@ function chooseImage(i) {
     ]
     for (let j = 0; j <= imageSource.length; j++){
         if(i === j){
-            let image = document.getElementById('cube__image');
+            let image = document.getElementById('container__cube__image');
             image.setAttribute("src", imageSource[j])
         }
 
     }
 }
 
-
 // Drag and Drop
 function init() {
-    let cubeImage = document.getElementById("cube__image");
-    let square = document.getElementById("square");
+    let cubeImage = document.getElementById("container__cube__image");
+    let square = document.getElementById("container__square");
     cubeImage.addEventListener(
         'dragstart',
         drag
@@ -64,7 +63,7 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     // CSS Change 
-    document.getElementById("cube__image").style.borderRadius = "unset";
+    document.getElementById("container__cube__image").style.borderRadius = "unset";
   }
 
 
