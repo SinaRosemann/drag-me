@@ -4,10 +4,10 @@
 
 function clickButton() {
     let buttons = document.getElementsByClassName("button");
-    for (let i = 0; i < buttons.length; i++){
+    for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener(
             'click',
-            function(){
+            function () {
                 chooseImage(i);
             }
         )
@@ -16,26 +16,33 @@ function clickButton() {
 
 function chooseImage(i) {
     let imageSource = [
-        'media/DragmeOne.jpg', 
-        'media/DragmeTwo.jpg', 
-        'media/DragmeThree.jpg',
+        'url(media/DragmeOne.jpg)',
+        'url(media/DragmeTwo.jpg)',
+        'url(media/DragmeThree.jpg)',
+
     ]
-    for (let j = 0; j <= imageSource.length; j++){
-        if(i === j){
-            let image = document.getElementById('container__cube__image');
-            image.setAttribute("src", imageSource[j])
+    for (let j = 0; j <= imageSource.length; j++) {
+        if (i === j) {
+            let image = document.getElementById('container__cube');
+            image.style.backgroundImage =  imageSource[j];
         }
 
     }
 }
 
 // Drag and Drop
+let cubeImage = document.getElementById("container__cube");
+let square = document.getElementById("container__square");
+let placeholder = document.getElementById("container__placeholder");
+
 function init() {
-    let cubeImage = document.getElementById("container__cube__image");
-    let square = document.getElementById("container__square");
     cubeImage.addEventListener(
         'dragstart',
         drag
+    )
+    cubeImage.addEventListener(
+        'touchstart',
+        mobiledrag
     )
     square.addEventListener(
         'drop',
@@ -46,16 +53,23 @@ function init() {
         allowDrop
     )
 };
-
-
 function drag(ev) {
-    ev.dataTransfer.setData("dataName", ev.target.id);
-  }
+    ev.dataTransfer.setData("dataName", ev.target.id);    
+}
+function mobiledrag(){
+    square.appendChild(cubeImage);
+
+    // CSS Changes
+    cubeImage.style.borderRadius = "unset";
+    cubeImage.style.border = "none";
+    cubeImage.style.animation = "fullsize 2s forwards";
+    square.style.animation = "fullsize 2s forwards";
+    placeholder.style.position = "relative";
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
-  }
-
+}
 function drop(ev) {
     // Drop
     ev.preventDefault();
@@ -63,8 +77,13 @@ function drop(ev) {
     ev.target.appendChild(document.getElementById(data));
 
     // CSS Change 
-    document.getElementById("container__cube__image").style.borderRadius = "unset";
-  }
+    cubeImage.style.borderRadius = "unset";
+    cubeImage.style.border = "none";
+    cubeImage.style.animation = "fullsize 2s forwards";
+    square.style.animation = "fullsize 2s forwards";
+    placeholder.style.position = "relative"
+}
+
 
 
 // call functions

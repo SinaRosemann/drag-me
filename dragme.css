@@ -4,7 +4,8 @@ body {
   overflow: hidden;
 }
 html{
-  color: #fff;
+  font-family: 'Josefin Slab', serif;
+  color: #ffffff;
 }
 .background {
   width: 100vw;
@@ -19,16 +20,78 @@ html{
   display: inline-flex;
 }
 
+/* font */
+
+h2 {
+  font-size: 30px;
+  line-height: 1.5;
+  display: inline;
+  background-image: linear-gradient(
+        transparent 70%,
+        #8b0000 30%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    animation: underline 2s forwards;
+}
+
+@keyframes underline {
+    to {
+        background-size: 100% 100%;
+    }
+}
+
+@media (pointer: fine){
+  .content--mobile {
+    display: none;
+   }
+}
+
+@media (pointer: coarse) {   
+  .content--desktop {
+  display: none;
+ }
+}
+
+
+
+/* Button */
+button {
+  height: 50px;
+  width: 50px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  margin: 25px 5px;
+}
+
 /* Image Cube */
+#container__placeholder {
+  position: absolute;
+  z-index: -1;
+  height: 200px;
+  width: 200px;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+}
 #container__cube {
   height: 200px;
   width: 200px;
+  border: 5px solid #ffffff;
   border-radius: 50%;
+  background-image: url('media/DragmeOne.jpg');
+  background-position: bottom;
 }
 #container__cube__image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+}
+
+@keyframes fullsize {
+  to {
+    height: 400px;
+    width: 300px;
+  }
 }
 
 /* Path */
@@ -40,5 +103,43 @@ html{
 #container__square {
   height: 200px;
   width: 200px;
-  border: 1px solid #ffffff;
+  border: 5px solid #ffffff;
+  top: 0px;
+  right: 0px;
+  animation: 
+}
+
+
+
+
+@media only screen and (max-width:420px){
+/* Image Cube */
+#container__placeholder {
+  height: 80px;
+  width: 80px;
+  border: 2px solid #ffffff;
+}
+#container__cube {
+  height: 80px;
+  width: 80px;
+  border: 2px solid #ffffff;
+}
+
+svg {
+  width: 84px;
+  height: 84px;
+}
+
+@keyframes fullsize {
+  to {
+    height: 120px;
+    width: 80px;
+  }
+}
+/*  Drop Suqare */
+#container__square {
+  height: 80px;
+  width: 80px;
+  border: 2px solid #ffffff;
+}
 }
